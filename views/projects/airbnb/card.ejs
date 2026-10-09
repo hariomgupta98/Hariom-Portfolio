@@ -1,0 +1,23 @@
+<article class="project-card project-featured reveal">
+  <a class="project-art art-airbnb airbnb-image" href="/projects/airbnb/screenshot.png" target="_blank" rel="noopener" aria-label="View full-size Airbnb project screenshot">
+    <img src="/projects/airbnb/screenshot.png" alt="Airbnb-inspired travel listing project showing destination cards and nightly prices" width="1845" height="1605" loading="lazy">
+  </a>
+  <div class="project-content">
+    <div class="project-meta">
+      <span>03 · Travel listing platform</span>
+      <span>In progress</span>
+    </div>
+    <h3><%= project.title %></h3>
+<% if(project.url) { %><a class="project-open" href="<%= project.url %>" target="_blank" rel="noopener noreferrer">View project ↗</a><% } %>
+    <p><%= project.description %></p>
+    <div class="tag-list">
+      <span>Backend Development</span>
+      <span>Travel Listings</span>
+      <span>Work in Progress</span>
+    </div>
+    <p class="project-progress">Development is ongoing.</p>
+    <% if (project.liveUrl) { %>
+  <a class="project-live-link" href="<%= project.liveUrl %>" target="_blank" rel="noopener noreferrer">View live project ↗</a>
+<% } %>
+  </div>
+</article>

@@ -1,0 +1,22 @@
+<article class="project-card project-featured reveal" tabindex="0" data-project="proconnect">
+  <%- include("preview") %>
+  <div class="project-content">
+    <div class="project-meta">
+      <span>01 · Campus platform</span>
+      <span>Featured</span>
+    </div>
+    <h3><%= project.title %></h3>
+<% if(project.url) { %><a class="project-open" href="<%= project.url %>" target="_blank" rel="noopener noreferrer">View project ↗</a><% } %>
+    <p><%= project.description %></p>
+    <div class="tag-list">
+      <span>React</span>
+      <span>Node.js</span>
+      <span>MongoDB</span>
+    </div>
+    <button class="project-open" type="button" data-open-project="proconnect">View case study <span>↗</span>
+    </button>
+    <% if (project.liveUrl) { %>
+  <a class="project-live-link" href="<%= project.liveUrl %>" target="_blank" rel="noopener noreferrer">View live project ↗</a>
+<% } %>
+  </div>
+</article>

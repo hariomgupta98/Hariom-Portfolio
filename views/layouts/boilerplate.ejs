@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080a12" />
+    <meta
+    name="description"
+    content="Hariom Gupta — software developer building thoughtful web experiences and practical systems."
+    />
+    <title>
+      <%= title %> — Hariom Gupta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+    />
+    <link rel="icon" type="image/jpeg" href="/assets/images/lotus-icon.jpg" />
+    <link rel="stylesheet" href="/css/style.css?v=admin-nav-2" />
+  <noscript><style>.intro{display:none!important}.site-shell,.reveal{opacity:1!important;visibility:visible!important;transform:none!important}body.is-intro{overflow:auto!important}</style></noscript>
+  </head>
+
+  <body class="<%= isHome ? 'is-intro' : '' %>">
+    <% if (isHome) { %>
+      <%- include('../includes/intro') %>
+    <% } %>
+    <div class="site-shell <%= isHome ? '' : 'is-visible' %>" id="siteShell">
+      <div class="ambient ambient-a">
+      </div>
+      <div class="ambient ambient-b">
+      </div>
+      <%- include('../includes/navbar') %>
+      <main id="main">
+        <%- body %>
+      </main>
+      <%- include('../includes/footer') %>
+    </div>
+    <% if (isHome) { %>
+      <%- include('../includes/project-modal') %>
+      <div class="cursor-glow" id="cursorGlow" aria-hidden="true">
+      </div>
+      <script src="/js/intro.js">
+      </script>
+      <script src="/js/scroll.js">
+      </script>
+      <script src="/projects/proconnect/case-study.js">
+      </script>
+      <script src="/js/effects.js">
+      </script>
+    <% } %>
+    <script src="/js/navigation.js?v=admin-nav-2">
+    </script>
+  </body>
+</html>

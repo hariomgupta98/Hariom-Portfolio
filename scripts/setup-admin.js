@@ -1,0 +1,22 @@
+const fs = require('node:fs');
+const path = require('node:path');
+const crypto = require('node:crypto');
+const readline = require('node:readline/promises');
+(async () => {
+ const rl = readline.createInterface({input:process.stdin, output:process.stdout});
+ const username = (await rl.question('Admin username [admin]: ')).trim() || 'admin';
+ console.log('The password will be hidden as you type.');
+ const output = rl._writeToOutput;
+ process.stdout.write('Password (at least 12 characters): ');
+ rl._writeToOutput = () => {};
+ const password = await rl.question('');
+ rl._writeToOutput = output; process.stdout.write('\n'); rl.close();
+ if(!/^[a-zA-Z0-9_.-]{1,50}$/.test(username) || password.length < 12 || password.length > 1024) throw Error('Use a simple username and a password of 12–1024 characters.');
+ const salt = crypto.randomBytes(16).toString('hex');
+ const hash = crypto.scryptSync(password,salt,64).toString('hex');
+ const file = path.join(__dirname,'../.env');
+ const previous = fs.existsSync(file) ? fs.readFileSync(file,'utf8') : '';
+ const kept = previous.split('\n').filter(line=> !/^\s*ADMIN_(USERNAME|PASSWORD_HASH)\s*=/.test(line)).join('\n').trim();
+ fs.writeFileSync(file, `${kept}\nADMIN_USERNAME=${username}\nADMIN_PASSWORD_HASH=${salt}:${hash}\n`, {mode:0o600});
+ console.log('Admin saved. Restart the server, then open /admin/login.');
+})().catch(e=>{console.error(e.message);process.exitCode=1});

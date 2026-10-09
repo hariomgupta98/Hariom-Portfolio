@@ -1,0 +1,67 @@
+<!-- About and profile -->
+<section class="hero section container" id="home">
+  <div class="hero-copy reveal">
+    <div class="availability">
+      <span>
+      </span> Open to software opportunities</div>
+    <p class="eyebrow">Software developer · Bhopal, India</p>
+    <h1>I turn curious ideas into <em>useful digital products.</em>
+    </h1>
+    <p class="hero-lede">
+      I’m Hariom, a Computer Science student who enjoys solving hard problems and building full-stack
+      experiences that feel simple, fast, and human.
+    </p>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#projects">Explore my work <span>↓</span>
+      </a>
+      <a class="button button-resume" href="<%= hasAsset("/assets/resume/Hariom-Gupta-Resume.pdf") ? "/assets/resume/Hariom-Gupta-Resume.pdf" : "/assets-help" %>" target="_blank" rel="noopener">View resume <span aria-hidden="true">↗</span>
+      </a>
+      <a class="text-link" href="mailto:mrhgupta9932@gmail.com">Start a conversation <span>↗</span>
+      </a>
+    </div>
+
+    <nav class="social-links" aria-label="Social profiles">
+      <a href="https://github.com/hariomgupta98" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      <a href="https://www.linkedin.com/in/hariomgupta2756/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      <a href="https://leetcode.com/u/hgupta9836/" target="_blank" rel="noopener noreferrer">LeetCode ↗</a>
+    </nav>
+  </div>
+
+  <div class="hero-visual reveal" aria-label="Hariom Gupta portrait and skills">
+    <div class="portrait-card" id="portraitCard">
+      <div class="portrait-topline">
+        <span>Building an Airbnb-inspired project</span>
+        <span class="live-dot">
+        </span>
+      </div>
+      <% if (hasAsset("/assets/images/hariom-portrait.jpg")) { %>
+        <img class="hero-photo" src="/assets/images/hariom-portrait.jpg" alt="Hariom Gupta wearing a light grey blazer" width="1384" height="1084" fetchpriority="high">
+      <% } else { %>
+        <span class="asset-note">Hariom Gupta wearing a light grey blazer</span>
+      <% } %>
+      <div class="portrait-caption">
+        <strong>Code. Learn. Ship.</strong>
+        <span>One meaningful iteration at a time.</span>
+      </div>
+    </div>
+    <span class="skill-pill pill-react">React</span>
+    <span class="skill-pill pill-cpp">C++</span>
+    <span class="skill-pill pill-node">Node.js</span>
+    <span class="skill-pill pill-aws">AWS</span>
+  </div>
+
+  <div class="hero-stats reveal">
+    <div>
+      <strong>DSA</strong>
+      <span>Problem solving</span>
+    </div>
+    <div>
+      <strong>MERN</strong>
+      <span>Full-stack builds</span>
+    </div>
+    <div>
+      <strong>Cloud</strong>
+      <span>Learning to scale</span>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,113 @@
+/* Skills and current project */
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:20px
+}
+
+.skill-group{
+  padding:28px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:linear-gradient(135deg,rgba(75,217,255,.05),rgba(138,92,255,.06))
+}
+
+.skill-group h3{
+  font-family:var(--display);
+  font-size:24px;
+  margin:16px 0 24px
+}
+
+.skills{
+  scroll-margin-top:70px
+}
+
+.art-airbnb{
+  background:radial-gradient(circle at 20% 20%,#6e384c,transparent 70%),#19162a;
+  padding:32px
+}
+
+.stay-preview{
+  width:100%;
+  max-width:360px;
+  border:1px solid #ffffff25;
+  border-radius:24px;
+  padding:30px;
+  background:#15131fc9
+}
+
+.stay-label{
+  font-size:10px;
+  letter-spacing:.16em;
+  color:#fca8b9
+}
+
+.stay-icon{
+  font-size:96px;
+  line-height:1.4;
+  color:#ffb6bb
+}
+
+.stay-preview strong{
+  display:block;
+  font:600 30px var(--display)
+}
+
+.stay-preview p{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.8
+}
+
+.status-chip{
+  display:inline-block;
+  padding:8px 12px;
+  border-radius:99px;
+  background:#ffb6bb18;
+  color:#ffc3cc;
+  font-size:12px;
+  margin-top:15px
+}
+
+.project-progress{
+  font-size:13px;
+  color:var(--cyan)!important;
+  margin-top:24px
+}
+
+.apna-achievement{
+  background:linear-gradient(135deg,rgba(230,164,100,.07),rgba(138,92,255,.08))
+}
+
+@media(max-width:900px){
+  .skills-grid{
+  grid-template-columns:1fr
+}
+
+.skill-group{
+  padding:24px
+}
+}
+
+/* Resume links */
+.hero-actions { flex-wrap: wrap; }
+.button-resume { border: 1px solid var(--line); background: rgba(255,255,255,.05); color: var(--ink); }
+.button-resume:hover { border-color: var(--cyan); }
+.resume-download { position: relative; margin-top: 18px; }
+
+/* Real Airbnb project screenshot */
+.project-featured .airbnb-image {
+  padding: 0;
+  min-height: 0;
+  background: #fff;
+}
+.airbnb-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.airbnb-image:focus-visible {
+  outline: 3px solid var(--cyan);
+  outline-offset: -3px;
+}
