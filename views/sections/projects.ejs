@@ -11,7 +11,15 @@
     </div>
 
     <div class="project-grid">
-      <% for (const project of projects) { %>
+      <%
+        const projectOrder = ['zerodha', 'airbnb', 'proconnect'];
+        const rank = project => {
+          const index = projectOrder.indexOf(project.template || project.id);
+          return index === -1 ? projectOrder.length : index;
+        };
+        const orderedProjects = [...projects].sort((a, b) => rank(a) - rank(b));
+      %>
+      <% for (const project of orderedProjects) { %>
         <% if (['proconnect','zerodha','airbnb'].includes(project.template) && !project.image) { %>
           <%- include('../projects/' + project.template + '/card', {project}) %>
         <% } else { %>
