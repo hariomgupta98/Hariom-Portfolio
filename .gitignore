@@ -4,8 +4,11 @@ node_modules/
 .env
 node_modules/
 
+<<<<<<< HEAD
 admin-auth.js
 
 scripts/setup-admin.js
 views/admin/login.ejs
 views/admin/projects.ejs
+=======
+>>>>>>> 0b94f8e8db9d7cfa20eb9cbd7892cf1f60d9498f

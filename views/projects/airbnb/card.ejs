@@ -1,10 +1,16 @@
 <article class="project-card project-featured reveal">
+<<<<<<< HEAD
   <a class="project-art art-airbnb airbnb-image" href="/projects/airbnb/screenshot.png" target="_blank" rel="noopener" aria-label="View full-size Wanderlust project screenshot">
     <img src="/projects/airbnb/screenshot.png" alt="Wanderlust travel listing platform showing destination cards and nightly prices" width="1845" height="1605" loading="lazy">
+=======
+  <a class="project-art art-airbnb airbnb-image" href="/projects/airbnb/screenshot.png" target="_blank" rel="noopener" aria-label="View full-size Airbnb project screenshot">
+    <img src="/projects/airbnb/screenshot.png" alt="Airbnb-inspired travel listing project showing destination cards and nightly prices" width="1845" height="1605" loading="lazy">
+>>>>>>> 0b94f8e8db9d7cfa20eb9cbd7892cf1f60d9498f
   </a>
   <div class="project-content">
     <div class="project-meta">
       <span>02 · Travel listing platform</span>
+<<<<<<< HEAD
       <span>Full-stack project</span>
     </div>
     <h3><%= project.title %></h3>
@@ -19,5 +25,21 @@
       <a class="project-open" href="https://wanderlust-man8.onrender.com/listings" target="_blank" rel="noopener noreferrer">Live Project ↗</a>
       <a class="project-open" href="https://github.com/hariomgupta98/Airbnb" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
     </div>
+=======
+      <span>In progress</span>
+    </div>
+    <h3><%= project.title %></h3>
+<% if(project.url) { %><a class="project-open" href="<%= project.url %>" target="_blank" rel="noopener noreferrer">View project ↗</a><% } %>
+    <p><%= project.description %></p>
+    <div class="tag-list">
+      <span>Backend Development</span>
+      <span>Travel Listings</span>
+      <span>Work in Progress</span>
+    </div>
+    <p class="project-progress">Development is ongoing.</p>
+    <% if (project.liveUrl) { %>
+  <a class="project-live-link" href="<%= project.liveUrl %>" target="_blank" rel="noopener noreferrer">View live project ↗</a>
+<% } %>
+>>>>>>> 0b94f8e8db9d7cfa20eb9cbd7892cf1f60d9498f
   </div>
 </article>

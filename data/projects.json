@@ -3,22 +3,36 @@
     "id": "proconnect",
     "template": "proconnect",
     "title": "ProConnect",
+<<<<<<< HEAD
     "description": "A unified college experience for students, hostel teams, and faculty—designed to make communication and everyday requests frictionless.",
+=======
+    "description": "A unified college experience for students, hostel teams, and faculty\u2014designed to make communication and everyday requests frictionless.",
+>>>>>>> 0b94f8e8db9d7cfa20eb9cbd7892cf1f60d9498f
     "url": ""
   },
   {
     "id": "zerodha",
     "template": "zerodha",
     "title": "Zerodha",
+<<<<<<< HEAD
     "description": "Explore my Zerodha project’s live home page and dashboard, or browse the source code on GitHub.",
+=======
+    "description": "Explore my Zerodha project\u2019s live home page and dashboard, or browse the source code on GitHub.",
+>>>>>>> 0b94f8e8db9d7cfa20eb9cbd7892cf1f60d9498f
     "url": "https://zerodha-u542.onrender.com"
   },
   {
     "id": "airbnb",
     "template": "airbnb",
+<<<<<<< HEAD
     "title": "Wanderlust",
     "description": "A full-stack travel listing platform inspired by Airbnb, featuring listing management, user authentication, reviews, and location-based listings.",
     "url": "https://wanderlust-man8.onrender.com/listings",
     "liveUrl": "https://wanderlust-man8.onrender.com/listings"
+=======
+    "title": "Airbnb-inspired project",
+    "description": "I\u2019m currently building a travel listing web application inspired by Airbnb, developing the listing pages and backend as I strengthen my full-stack skills.",
+    "url": ""
+>>>>>>> 0b94f8e8db9d7cfa20eb9cbd7892cf1f60d9498f
   }
 ]
