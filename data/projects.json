@@ -1,0 +1,24 @@
+[
+  {
+    "id": "proconnect",
+    "template": "proconnect",
+    "title": "ProConnect",
+    "description": "A unified college experience for students, hostel teams, and faculty—designed to make communication and everyday requests frictionless.",
+    "url": ""
+  },
+  {
+    "id": "zerodha",
+    "template": "zerodha",
+    "title": "Zerodha",
+    "description": "Explore my Zerodha project’s live home page and dashboard, or browse the source code on GitHub.",
+    "url": "https://zerodha-u542.onrender.com"
+  },
+  {
+    "id": "airbnb",
+    "template": "airbnb",
+    "title": "Wanderlust",
+    "description": "A full-stack travel listing platform inspired by Airbnb, featuring listing management, user authentication, reviews, and location-based listings.",
+    "url": "https://wanderlust-man8.onrender.com/listings",
+    "liveUrl": "https://wanderlust-man8.onrender.com/listings"
+  }
+]

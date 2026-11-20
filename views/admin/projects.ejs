@@ -1,0 +1,21 @@
+<% layout('/layouts/boilerplate') %>
+<section class="section container admin-page">
+ <p class="eyebrow">Admin workspace</p><h1>Manage projects</h1>
+ <div class="admin-actions"><a class="button button-primary" href="/projects/new">Add project +</a><a class="button" href="/#projects">View portfolio ↗</a>
+ <form method="POST" action="/admin/logout"><input type="hidden" name="_csrf" value="<%= csrf %>"><button class="button button-signout">Sign out</button></form></div>
+ <p><%= projects.length %> projects in your portfolio.</p>
+ <div class="admin-grid">
+ <% for(const project of projects) { %>
+  <article class="admin-card"><% if(project.image) { %><img class="project-upload-image" src="<%= project.image %>" alt="<%= project.title %> preview" loading="lazy"><% } %><h2><%= project.title %></h2><p><%= project.description %></p>
+   <% if(project.url) { %><a href="<%= project.url %>" target="_blank" rel="noopener noreferrer">Open project ↗</a><% } %>
+   <% if (project.liveUrl) { %>
+  <a class="project-live-link" href="<%= project.liveUrl %>" target="_blank" rel="noopener noreferrer">View live project ↗</a>
+<% } %>
+   <div class="admin-actions"><a class="button button-small button-edit" href="/admin/projects/<%= project.id %>/edit">Edit</a>
+   <form method="POST" action="/admin/projects/<%= project.id %>/delete" data-delete-project><input type="hidden" name="_csrf" value="<%= csrf %>"><button class="button button-small button-delete">Delete</button></form></div>
+  </article>
+ <% } %>
+ <% if(!projects.length) { %><p>No projects yet. Add your first project above.</p><% } %>
+ </div>
+</section>
+<script src="/js/admin.js" defer></script>

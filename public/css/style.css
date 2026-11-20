@@ -1,0 +1,75 @@
+/* Each file styles one part of the portfolio. Order matters. */
+@import url("base.css");
+@import url("intro.css");
+@import url("navbar.css");
+@import url("hero.css");
+@import url("projects.css");
+@import url("footer-modal.css");
+@import url("certificates-images.css");
+@import url("skills.css");
+@import url("responsive.css");
+
+.project-form { display: grid; gap: 16px; max-width: 600px; }
+.project-form input, .project-form textarea {
+  padding: 12px; border: 1px solid var(--line); border-radius: 8px;
+  background: var(--surface); color: var(--ink); font: inherit;
+}
+.asset-note { display: block; padding: 24px; color: var(--muted); }
+/* Footer stays below the page content, without overlapping the hero. */
+.site-footer {
+  position: static;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 14px;
+}
+.site-footer a:hover { color: var(--ink); }
+
+.admin-page { padding-top: 130px; min-height: 80vh; }
+.admin-page h1 { font-size: clamp(2rem, 7vw, 3.5rem); }
+.admin-actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin:20px 0; }
+.admin-actions form { margin:0; }
+.admin-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); gap:20px; }
+.admin-card { padding:24px; border:1px solid var(--line); border-radius:20px; background:var(--surface); min-width:0; }
+.admin-card h2 { font-size:1.5rem; }
+.admin-card p { color:var(--muted); line-height:1.7; white-space:pre-line; }
+.danger { color:#ffb1b8; border:1px solid #ff647c80; }
+.project-upload-image, .project-upload-preview { display:block; width:100%; aspect-ratio:16 / 10; object-fit:contain; background:#080a12; border-radius:12px; margin-bottom:18px; }
+.project-upload-preview[hidden] { display:none; }
+.project-form .remove-image { display:flex; align-items:center; gap:10px; }
+.project-form .remove-image input { width:auto; }
+.project-form input[type=file] { width:100%; font-size:16px; }
+.project-form button:disabled { opacity:.6; cursor:wait; }
+#imageHelp { margin:0; color:var(--muted); font-size:14px; }
+#imageError { color:#ffb1b8; }
+
+/* Admin sign-out action */
+.button.button-signout { background: #b91c1c; color: #fff; border: 1px solid #ef4444; cursor: pointer; }
+.button.button-signout:hover { background: #991b1b; border-color: #f87171; }
+.button.button-signout:focus-visible { outline: 3px solid #fca5a5; outline-offset: 3px; }
+
+/* Compact project management actions */
+.admin-card .button-small { min-height: 34px; min-width: 66px; padding: 6px 12px; border-radius: 6px; font-size: 13px; line-height: 20px; font-weight: 600; gap: 6px; cursor: pointer; border: 1px solid transparent; }
+.admin-card .button-small:hover { transform: none; }
+.admin-card .button-edit { background: #1d4ed8; border-color: #2563eb; color: #fff; }
+.admin-card .button-edit:hover { background: #1e40af; }
+.admin-card .button-delete { background: #b91c1c; border-color: #dc2626; color: #fff; }
+.admin-card .button-delete:hover { background: #991b1b; }
+.admin-card .button-small:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+@media (pointer: coarse) { .admin-card .button-small { min-height: 44px; } }
+
+.project-live-link { display:table; margin-top:16px; padding:9px 14px; border-radius:8px; background:#1d4ed8; color:#fff; font-size:14px; font-weight:600; }
+.project-live-link:hover { background:#1e40af; }
+#liveUrlHelp { margin:0; color:var(--muted); font-size:14px; }
+
+/* Keep navigation readable above admin forms and long project lists. */
+.site-header.admin-header { background:rgba(8,10,18,.98); border-bottom:1px solid var(--line); }
+.site-header .nav-link { white-space:nowrap; }
+@media (max-width:1200px) {
+ .site-header .nav-links { top:80px; max-height:calc(100dvh - 96px); overflow-y:auto; overscroll-behavior:contain; }
+}

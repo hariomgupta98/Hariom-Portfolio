@@ -1,0 +1,44 @@
+<header class="site-header <%= isAdminPage ? 'admin-header' : '' %>" id="siteHeader">
+  <nav class="nav container" aria-label="Primary navigation">
+    <a class="brand" href="/#home" aria-label="Hariom Gupta home">
+      <span class="brand-mark">
+        <% if (hasAsset("/assets/images/lotus-icon.jpg")) { %>
+          <img src="/assets/images/lotus-icon.jpg" alt="" width="44" height="44">
+        <% } else { %>
+          <span class="asset-note">HG</span>
+        <% } %>
+      </span>
+      <span class="brand-name">Hariom Gupta</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="navLinks">
+      <span>
+      </span>
+      <span>
+      </span>
+      <span>
+      </span>
+      <span class="sr-only">Open navigation</span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <% if (isAdminPage) { %>
+        <a href="/" class="nav-link">View portfolio ↗</a>
+        <% if (isAdmin) { %>
+          <a href="/admin/projects" class="nav-link <%= currentPath === '/admin/projects' || currentPath.endsWith('/edit') ? 'active' : '' %>">Manage projects</a>
+          <a href="/projects/new" class="nav-link <%= currentPath === '/projects/new' || currentPath === '/projects' ? 'active' : '' %>">Add project</a>
+        <% } else { %>
+          <a href="/admin/login" class="nav-link active">Admin login</a>
+        <% } %>
+      <% } else { %>
+        <a href="/#home" class="nav-link active">About</a>
+        <a href="/#skills" class="nav-link">Skills</a>
+        <a href="/#projects" class="nav-link">Projects</a>
+        <a href="/#certifications" class="nav-link">Certificates</a>
+        <a href="/#contact" class="nav-link">Contact</a>
+        <% if (isAdmin) { %>
+          <a href="/projects/new" class="nav-link">Add project</a>
+          <a href="/admin/projects" class="nav-link">Manage projects</a>
+        <% } %>
+      <% } %>
+    </div>
+  </nav>
+</header>

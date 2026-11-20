@@ -1,0 +1,35 @@
+<% layout('/layouts/boilerplate') %>
+<section class="section container">
+  <p class="eyebrow">Admin workspace</p>
+  <h1><%= title %></h1>
+  
+  <% if (error) { %>
+    <p role="alert">
+      <%= error %>
+    </p>
+  <% } %>
+  <form method="POST" action="<%= action %>" class="project-form">
+    <input type="hidden" name="_csrf" value="<%= csrf %>">
+    <label for="title">Project name</label>
+    <input id="title" name="title" value="<%= values.title || '' %>" maxlength="100" required>
+    <label for="description">Description</label>
+    <textarea id="description" name="description" rows="4" maxlength="600" required><%= values.description || '' %></textarea>
+    <label for="url">Project or GitHub URL (optional)</label>
+    <input id="url" name="url" type="url" value="<%= values.url || '' %>">
+    <label for="projectImage">Project image (optional)</label>
+    <input id="projectImage" type="file" accept="image/png,image/jpeg,image/webp" aria-describedby="imageHelp imageError">
+    <p id="imageHelp">Choose a PNG, JPG, or WebP image up to 2 MB.</p>
+    <input type="hidden" id="imageData" name="imageData" value="">
+    <img id="imagePreview" class="project-upload-preview" src="<%= values.image || '' %>" alt="Project image preview" <%= values.image ? '' : 'hidden' %>>
+    <p id="imageError" role="alert" hidden></p>
+    <% if(values.image) { %><label class="remove-image"><input type="checkbox" id="removeImage" name="removeImage"> Remove current image</label><% } %>
+    <noscript><p>Enable JavaScript to upload an image. You can still save project text.</p></noscript>
+    <label for="liveUrl">Live project link (optional)</label>
+    <input id="liveUrl" name="liveUrl" type="url" maxlength="2048" placeholder="https://your-project.example.com" value="<%= values.liveUrl || '' %>" aria-describedby="liveUrlHelp">
+    <p id="liveUrlHelp">Paste your deployed website link to show a View live project button.</p>
+    <button id="saveProject" class="button button-primary">Save project</button>
+    <a href="/admin/projects">Back to projects</a>
+  </form>
+</section>
+
+<script src="/js/project-image-form.js" defer></script>

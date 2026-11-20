@@ -1,0 +1,249 @@
+@media (max-width: 1200px) {
+.menu-toggle {
+  display: block;
+  z-index: 2;
+}
+
+.menu-toggle.open > span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.open > span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open > span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.nav-links {
+  position: fixed;
+  top: 67px;
+  left: 14px;
+  right: 14px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 17px;
+  background: rgba(13,16,28,.96);
+  transform: translateY(-15px);
+  opacity: 0;
+  visibility: hidden;
+  transition: .25s;
+}
+
+.nav-links.open {
+  transform: none;
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav-link {
+  padding: 13px 14px;
+}
+
+
+}
+@media (max-width: 900px) {
+  .section {
+  padding: 90px 0;
+}
+
+.hero {
+  min-height: auto;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  padding-top: 140px;
+}
+
+.hero-copy {
+  max-width: 720px;
+}
+
+.hero-visual {
+  min-height: 500px;
+}
+
+.portrait-card {
+  width: min(360px, 80vw);
+}
+
+.hero-stats {
+  position: static;
+  grid-column: 1;
+  margin-top: 25px;
+}
+
+.project-featured {
+  grid-template-columns: 1fr;
+}
+
+.project-featured .project-art {
+  min-height: 420px;
+}
+
+.section-heading {
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.cursor-glow {
+  display: none;
+}
+}
+
+@media (max-width: 640px) {
+  .container {
+  width: min(100% - 28px, 1160px);
+}
+
+.section {
+  padding: 76px 0;
+}
+
+.brand-name {
+  display: none;
+}
+
+.intro-skip {
+  right: 16px;
+  bottom: 22px;
+}
+
+.hello-wrap {
+  font-size: 24vw;
+}
+
+.intro-name {
+  max-width: 290px;
+  margin-inline: auto;
+}
+
+.hero {
+  padding-top: 120px;
+}
+
+.availability {
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: clamp(3.15rem, 15vw, 4.8rem);
+}
+
+.hero-actions {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hero-visual {
+  min-height: 430px;
+}
+
+.portrait-card {
+  width: min(300px, 78vw);
+  border-radius: 27px;
+}
+
+.skill-pill {
+  font-size: 11px;
+}
+
+.hero-stats {
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 0;
+}
+
+.hero-stats div:nth-child(3) {
+  border-left: 0;
+  padding-left: 0;
+}
+
+.project-grid {
+  grid-template-columns: 1fr;
+}
+
+.project-featured {
+  grid-column: auto;
+}
+
+.project-art, .project-featured .project-art {
+  min-height: 320px;
+}
+
+.mock-browser {
+  width: 88%;
+}
+
+.mock-body {
+  min-height: 220px;
+}
+
+.mock-feed {
+  padding: 20px 15px;
+}
+
+.project-content, .project-featured .project-content {
+  padding: 25px;
+}
+
+.project-content h3 {
+  margin-top: 24px;
+}
+
+.contact {
+  padding-bottom: 14px;
+}
+
+.contact-card {
+  width: calc(100% - 28px);
+  min-height: 590px;
+  padding: 45px 25px 100px;
+  border-radius: 25px;
+}
+
+.contact-footer {
+  left: 25px;
+  right: 25px;
+  bottom: 28px;
+}
+
+.modal-grid {
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.case-modal {
+  padding: 38px 24px 28px;
+}
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+  scroll-behavior: auto !important;
+  animation-duration: .01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: .01ms !important;
+}
+}
+
+/* Intrinsic sizing keeps long text and grid content within small screens. */
+img { max-width: 100%; }
+.hero > *, .project-grid > *, .arcade-achievement > * { min-width: 0; }
+.hero-actions, .project-links { flex-wrap: wrap; }
+main { overflow-wrap: anywhere; }
+section[id] { scroll-margin-top: 95px; }
+.menu-toggle, .button, .social-links a { min-height: 44px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; }
+.project-form input, .project-form textarea { min-width: 0; width: 100%; font-size: 16px; }
+.arcade-copy .button { margin-top: 10px; }
+@media (max-width: 900px) {
+ .arcade-achievement { grid-template-columns: 1fr; }
+}
+@media (max-width: 380px) {
+ .arcade-achievement { padding: 16px; }
+ .hero-visual { min-height: 370px; }
+ .contact-card { padding-inline: 18px; }
+}
+@media (hover: none), (pointer: coarse) { .cursor-glow { display: none; } }
