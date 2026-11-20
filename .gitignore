@@ -4,3 +4,8 @@ node_modules/
 .env
 node_modules/
 
+admin-auth.js
+
+scripts/setup-admin.js
+views/admin/login.ejs
+views/admin/projects.ejs
